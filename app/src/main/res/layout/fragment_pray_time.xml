@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.PrayTimeFragment">
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:background="@drawable/snapdesign"
+        android:gravity="center_vertical"
+        android:layoutDirection="rtl"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            style="@style/TitleText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="اوقات الصلاة" />
+
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/relative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linear">
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-20dp"
+            app:cardCornerRadius="@dimen/_20sdp">
+
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+
+
+           <ImageView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:scaleType="fitXY"
+               android:src="@drawable/s" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/ContentText"
+                android:padding="0dp"
+                android:fontFamily="@font/sst_arabic_bold"
+                android:textColor="@color/white"
+                android:text="@string/todo"/>
+            <TextView
+                android:id="@+id/tv_date2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/ContentText"
+                android:padding="0dp"
+                android:fontFamily="@font/sst_arabic_bold"
+                android:textColor="@color/white"
+                android:text="@string/todo"/>
+            <TextView
+                android:id="@+id/tv_date3"
+                android:padding="0dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/ContentText"
+                android:textColor="@color/white"
+                android:text="@string/todo"/>
+
+        </LinearLayout>
+
+
+       </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </RelativeLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_pray_time"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/relative"
+        android:padding="@dimen/_8sdp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:itemCount="5"
+        tools:listitem="@layout/pary_time_layout" />
+</RelativeLayout>

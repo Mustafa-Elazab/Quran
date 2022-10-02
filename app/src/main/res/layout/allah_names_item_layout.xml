@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+
+    >
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/tv_allah_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/islamic_star_foreground"
+            android:backgroundTint="#43A047"
+            android:padding="@dimen/_4sdp"
+            android:fontFamily="@font/sst_arabic_bold"
+            android:gravity="center"
+            android:text="الرحمن"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10ssp"
+            android:textStyle="bold" />
+</LinearLayout>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.fragment.HadithContentFragment"
+
+    >
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:background="@drawable/snapdesign"
+        android:gravity="center_vertical"
+        android:layoutDirection="rtl"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:id="@+id/tvHadithName"
+            style="@style/TitleText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="احاديث" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="@dimen/_8sdp"
+        android:orientation="vertical"
+        >
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        style="@style/cardStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+
+        android:visibility="visible">
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            >
+
+            <TextView
+                android:id="@+id/tvHadithContent"
+                style="@style/ContentText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/card_gradient"
+                android:text="contectcontectcontectcontectcontectcontectcontectcontectcontectcontect" />
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_explain"
+        style="@style/cardStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:visibility="gone"
+
+        >
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            >
+
+            <TextView
+                android:id="@+id/tvHadithDescription"
+                style="@style/ContentText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/card_gradient"
+                android:text="contectcontectcontectcontectcontectcontectcontectcontectcontectcontect" />
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btn_hadith_explain"
+        style="@style/TitleText"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginHorizontal="@dimen/_8sdp"
+        android:layout_marginVertical="@dimen/_10sdp"
+        android:backgroundTint="#43A047"
+        android:backgroundTintMode="screen"
+        android:elevation="20dp"
+        android:text="شرح الحديث" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/andrpod/Quran/app/src/main/res/drawable-v24/card_gradient.xml" value="0.176" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/drawable-v24/ic_baseline_keyboard_backspace_24.xml" value="0.176" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.146" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/drawable-v24/ic_mask_group.xml" value="0.146" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/drawable-v24/ic_qibla_compass.xml" value="0.1865" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/drawable/button_sucess_background.xml" value="0.146" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/drawable/card_for_time.xml" value="0.1445" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/drawable/dialog_background.xml" value="0.146" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/drawable/ic_back.xml" value="0.1865" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/drawable/ic_compass_direction.xml" value="0.146" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/drawable/ic_def_compass.xml" value="0.1865" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/drawable/ic_def_needle.xml" value="0.146" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/drawable/ic_dial.xml" value="0.1865" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/drawable/ic_forward.xml" value="0.1865" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/drawable/ic_home.xml" value="0.186" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/drawable/ic_launcher_background.xml" value="0.146" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/drawable/ic_my_location.xml" value="0.1865" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/drawable/ic_needle.xml" value="0.146" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/drawable/ic_notifications.xml" value="0.146" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/drawable/ic_quransvg.xml" value="0.1965" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/drawable/ic_repeat.xml" value="0.146" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/drawable/ic_share.xml" value="0.146" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/drawable/image_border.xml" value="0.1795" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/drawable/success_background.xml" value="0.146" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/font/acme.xml" value="0.284375" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/font/alata.xml" value="0.284375" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/font/fonts.xml" value="0.2833333333333333" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/font/roboto.xml" value="0.284375" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/layout/activity_main.xml" value="0.11302083333333333" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/layout/allah_names_item_layout.xml" value="0.20863616930312098" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/layout/alsalah_item_layout.xml" value="0.2056434373663959" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/layout/azkar_content_item_layout.xml" value="0.20863616930312098" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/layout/azkar_item_layout.xml" value="0.20863616930312098" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/layout/azkar_list_item.xml" value="0.20863616930312098" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/layout/custom_dialog.xml" value="0.2030392570704939" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/layout/fragment_alsalah.xml" value="0.2056434373663959" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/layout/fragment_azkar.xml" value="0.20863616930312098" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/layout/fragment_azkar_content.xml" value="0.2" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/layout/fragment_compass.xml" value="0.25416666666666665" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/layout/fragment_hadith.xml" value="0.20863616930312098" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/layout/fragment_hadith_content.xml" value="0.20863616930312098" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/layout/fragment_home.xml" value="0.20863616930312098" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/layout/fragment_list.xml" value="0.2" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/layout/fragment_names_of_allah.xml" value="0.20863616930312098" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/layout/fragment_pray_time.xml" value="0.20863616930312098" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/layout/fragment_quran_content.xml" value="0.25416666666666665" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/layout/fragment_sab7a.xml" value="0.20863616930312098" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/layout/fragment_splash.xml" value="0.2056434373663959" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/layout/hadith_item_layout.xml" value="0.20863616930312098" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/layout/main_home_layout.xml" value="0.190625" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/layout/namesOfAllah_item_layout.xml" value="0.20863616930312098" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/layout/pary_time_layout.xml" value="0.253125" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/layout/quran_item_layout.xml" value="0.253125" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/layout/spinner_list.xml" value="0.20863616930312098" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/layout/view_qibla.xml" value="0.25416666666666665" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/menu/bottom_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1795" />
+        <entry key="..\:/andrpod/Quran/app/src/main/res/xml/network_security_config.xml" value="0.11302083333333333" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
