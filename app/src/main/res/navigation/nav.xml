@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.mostafa.quran.ui.fragment.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main"
+        >
+        <action
+            android:id="@+id/action_mainFragment_to_alsalahFragment"
+            app:destination="@id/alsalahFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_hadithFragment"
+            app:destination="@id/hadithFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_azkarFragment"
+            app:destination="@id/azkarFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_namesOfAllahFragment"
+            app:destination="@id/namesOfAllahFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_sab7aFragment"
+            app:destination="@id/sab7aFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_compassFragment"
+            app:destination="@id/compassFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/alsalahFragment"
+        android:name="com.mostafa.quran.ui.fragment.AlsalahFragment"
+        android:label="fragment_alsalah"
+        tools:layout="@layout/fragment_alsalah" />
+    <fragment
+        android:id="@+id/azkarFragment"
+        android:name="com.mostafa.quran.ui.fragment.AzkarFragment"
+        android:label="fragment_azkar"
+        tools:layout="@layout/fragment_azkar" >
+        <action
+            android:id="@+id/action_azkarFragment_to_azkarContentFragment"
+            app:destination="@id/azkarContentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/hadithFragment"
+        android:name="com.mostafa.quran.ui.fragment.HadithFragment"
+        android:label="fragment_hadith"
+        tools:layout="@layout/fragment_hadith" >
+        <action
+            android:id="@+id/action_hadithFragment_to_hadithContentFragment"
+            app:destination="@id/hadithContentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/azkarContentFragment"
+        android:name="com.mostafa.quran.ui.fragment.AzkarContentFragment"
+        android:label="fragment_azkar_content"
+        tools:layout="@layout/fragment_azkar_content" >
+        <argument
+            android:name="azkar_model"
+            app:argType="com.mostafa.quran.domain.model.azkar.AzkarResponseItem" />
+    </fragment>
+    <fragment
+        android:id="@+id/hadithContentFragment"
+        android:name="com.mostafa.quran.ui.fragment.HadithContentFragment"
+        android:label="fragment_hadith_content"
+        tools:layout="@layout/fragment_hadith_content" >
+        <argument
+            android:name="hadith_model"
+            app:argType="com.mostafa.quran.domain.model.hadith.HadithResponseItem" />
+    </fragment>
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.mostafa.quran.ui.fragment.ListFragment"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/action_listFragment_to_quranContentFragment"
+            app:destination="@id/quranContentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/namesOfAllahFragment"
+        android:name="com.mostafa.quran.ui.fragment.NamesOfAllahFragment"
+        android:label="fragment_names_of_allah"
+        tools:layout="@layout/fragment_names_of_allah" />
+    <fragment
+        android:id="@+id/quranContentFragment"
+        android:name="com.mostafa.quran.ui.fragment.QuranContentFragment"
+        android:label="fragment_quran_content"
+        tools:layout="@layout/fragment_quran_content" >
+        <argument
+            android:name="QuranContentModel"
+            app:argType="com.mostafa.quran.domain.model.ChapterX" />
+    </fragment>
+    <fragment
+        android:id="@+id/sab7aFragment"
+        android:name="com.mostafa.quran.ui.fragment.Sab7aFragment"
+        android:label="fragment_sab7a"
+        tools:layout="@layout/fragment_sab7a" />
+    <fragment
+        android:id="@+id/compassFragment"
+        android:name="com.mostafa.quran.ui.fragment.CompassFragment"
+        android:label="CompassFragment" />
+
+
+</navigation>

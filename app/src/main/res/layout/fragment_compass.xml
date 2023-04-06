@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/app_bar"
+            layout="@layout/back_appbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" />
+
+
+        <com.mostafa.quran.utils.QiblaCompassView
+            android:id="@+id/qiblaCompassView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            app:currentLatitude="59.428299"
+            app:currentLongitude="10.667990"
+            app:dialDrawable="@drawable/ic_dial"
+            app:hideStatusText="false"
+            android:layout_below="@id/app_bar"
+            android:layout_centerInParent="true"
+            app:needleDrawable="@drawable/ic_needle" />
+
+
+    </RelativeLayout>
+</layout>
