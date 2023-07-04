@@ -61,7 +61,7 @@ class Sab7aViewModel @Inject constructor(
         _counter.value = 0
     }
 
-    fun vibrateDevice() {
+    private fun vibrateDevice() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val vibrationEffect =
                 VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE)

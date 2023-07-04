@@ -50,7 +50,9 @@ class Sab7aFragment : BaseFragment<FragmentSab7aBinding>(R.layout.fragment_sab7a
                 viewModel.toggleVibrationStatus()
 
             }
-
+            binding.btnCount.setOnClickListener {
+                viewModel.incrementCounter()
+            }
 
 
 
@@ -148,10 +150,7 @@ class Sab7aFragment : BaseFragment<FragmentSab7aBinding>(R.layout.fragment_sab7a
             } else {
                 binding.vibrateBtn.setImageDrawable(resources.getDrawable(R.drawable.baseline_smartphone_24))
             }
-            binding.btnCount.setOnClickListener {
-                viewModel.vibrateDevice()
-                viewModel.incrementCounter()
-            }
+
         }
     }
 
