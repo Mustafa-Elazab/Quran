@@ -1,43 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layoutDirection="rtl">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <LinearLayout
+    <data>
+
+        <variable
+            name="model"
+            type="com.mostafa.quran.domain.model.azkar.AzkarResponseItem" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginVertical="@dimen/_4sdp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
+        android:layout_marginHorizontal="@dimen/_8sdp"
+        android:layoutDirection="rtl"
+        android:padding="@dimen/_4sdp">
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_azkar_num"
+            style="@style/TextAppearance.MdcTypographyStyles.Headline5"
             android:layout_width="@dimen/_50sdp"
             android:layout_height="@dimen/_50sdp"
-            android:layout_marginStart="@dimen/_4sdp"
-            android:background="@mipmap/islamic_star_foreground"
-            android:backgroundTint="#FDD835"
-            android:fontFamily="@font/sst_arabic_bold"
+            android:background="@drawable/circle_shape"
             android:gravity="center"
+            android:padding="@dimen/_8sdp"
             android:text=""
-            android:textColor="@color/black"
-            android:textSize="@dimen/_10ssp"
-            android:textStyle="bold" />
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="1" />
 
 
-        <TextView
-            android:id="@+id/tvZkarName"
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvazkarName"
+            style="@style/TextAppearance.MdcTypographyStyles.Headline5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/sst_arabic_medium"
-            android:text="اذكار الصباح"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_17ssp"
-            android:textStyle="bold" />
+            android:layout_marginStart="@dimen/_8sdp"
+            android:text="@{model.category.toString()}"
+            app:layout_constraintBottom_toBottomOf="@id/tv_azkar_num"
+            app:layout_constraintStart_toEndOf="@id/tv_azkar_num"
+            app:layout_constraintTop_toTopOf="@id/tv_azkar_num"
+            tools:text="الفاتحة" />
 
-
-    </LinearLayout>
-</RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

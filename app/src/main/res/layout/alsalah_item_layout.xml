@@ -1,46 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
 
-    <TextView
-        android:id="@+id/tv_alsalah_name"
-        style="@style/ContentText"
+        <variable
+            name="model"
+            type="com.mostafa.quran.domain.model.alsalah.Chapter" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:gravity="start"
-        android:text="التشهد" />
+        android:layout_marginHorizontal="@dimen/_8sdp"
+        android:layoutDirection="rtl"
+        android:padding="@dimen/_4sdp">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card"
-        style="@style/cardStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tv_alsalah_name"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_weight="1">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_alsalah_num"
+            style="@style/TextAppearance.MdcTypographyStyles.Headline5"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:background="@drawable/circle_shape"
+            android:gravity="center"
+            android:padding="@dimen/_8sdp"
+            android:text="@{String.valueOf(model.id)}"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="1" />
 
-        <TextView
-            android:id="@+id/tv_alsalah_content"
-            style="@style/ContentText"
-            android:layout_width="match_parent"
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAlsalahName"
+            style="@style/TextAppearance.MdcTypographyStyles.Headline5"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/card_gradient"
-            android:text="" />
+            android:layout_marginStart="@dimen/_8sdp"
+            android:text="@{model.name.toString()}"
+            app:layout_constraintBottom_toBottomOf="@id/tv_alsalah_num"
+            app:layout_constraintStart_toEndOf="@id/tv_alsalah_num"
+            app:layout_constraintTop_toTopOf="@id/tv_alsalah_num"
+            tools:text="الفاتحة" />
 
 
-    </androidx.cardview.widget.CardView>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_below="@id/card"
-        android:background="@color/grey" />
-
-
-</RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

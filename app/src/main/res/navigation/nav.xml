@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.mostafa.quran.ui.fragment.MainFragment"
+        android:name="com.mostafa.quran.ui.cycles.home.main.fragment.MainFragment"
         android:label="MainFragment"
         tools:layout="@layout/fragment_main"
         >
@@ -32,15 +32,25 @@
         <action
             android:id="@+id/action_mainFragment_to_compassFragment"
             app:destination="@id/compassFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_pdfListFragment"
+            app:destination="@id/pdfListFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_pdfViewerFragment"
+            app:destination="@id/pdfViewerFragment" />
     </fragment>
     <fragment
         android:id="@+id/alsalahFragment"
-        android:name="com.mostafa.quran.ui.fragment.AlsalahFragment"
+        android:name="com.mostafa.quran.ui.cycles.home.alsalah.fragment.AlsalahFragment"
         android:label="fragment_alsalah"
-        tools:layout="@layout/fragment_alsalah" />
+        tools:layout="@layout/fragment_alsalah" >
+        <action
+            android:id="@+id/action_alsalahFragment_to_alsalahContentFragment"
+            app:destination="@id/alsalahContentFragment" />
+    </fragment>
     <fragment
         android:id="@+id/azkarFragment"
-        android:name="com.mostafa.quran.ui.fragment.AzkarFragment"
+        android:name="com.mostafa.quran.ui.cycles.home.azkar.fragment.list.AzkarFragment"
         android:label="fragment_azkar"
         tools:layout="@layout/fragment_azkar" >
         <action
@@ -49,7 +59,7 @@
     </fragment>
     <fragment
         android:id="@+id/hadithFragment"
-        android:name="com.mostafa.quran.ui.fragment.HadithFragment"
+        android:name="com.mostafa.quran.ui.cycles.home.hadith.fragment.list.HadithFragment"
         android:label="fragment_hadith"
         tools:layout="@layout/fragment_hadith" >
         <action
@@ -58,7 +68,7 @@
     </fragment>
     <fragment
         android:id="@+id/azkarContentFragment"
-        android:name="com.mostafa.quran.ui.fragment.AzkarContentFragment"
+        android:name="com.mostafa.quran.ui.cycles.home.azkar.fragment.akzar.AzkarContentFragment"
         android:label="fragment_azkar_content"
         tools:layout="@layout/fragment_azkar_content" >
         <argument
@@ -67,7 +77,7 @@
     </fragment>
     <fragment
         android:id="@+id/hadithContentFragment"
-        android:name="com.mostafa.quran.ui.fragment.HadithContentFragment"
+        android:name="com.mostafa.quran.ui.cycles.home.hadith.fragment.hadith.HadithContentFragment"
         android:label="fragment_hadith_content"
         tools:layout="@layout/fragment_hadith_content" >
         <argument
@@ -76,7 +86,7 @@
     </fragment>
     <fragment
         android:id="@+id/listFragment"
-        android:name="com.mostafa.quran.ui.fragment.ListFragment"
+        android:name="com.mostafa.quran.ui.cycles.home.quran.fragment.list.ListFragment"
         android:label="fragment_list"
         tools:layout="@layout/fragment_list" >
         <action
@@ -85,12 +95,12 @@
     </fragment>
     <fragment
         android:id="@+id/namesOfAllahFragment"
-        android:name="com.mostafa.quran.ui.fragment.NamesOfAllahFragment"
+        android:name="com.mostafa.quran.ui.cycles.home.namesOfAllah.fragment.NamesOfAllahFragment"
         android:label="fragment_names_of_allah"
         tools:layout="@layout/fragment_names_of_allah" />
     <fragment
         android:id="@+id/quranContentFragment"
-        android:name="com.mostafa.quran.ui.fragment.QuranContentFragment"
+        android:name="com.mostafa.quran.ui.cycles.home.quran.fragment.quran.QuranContentFragment"
         android:label="fragment_quran_content"
         tools:layout="@layout/fragment_quran_content" >
         <argument
@@ -99,13 +109,47 @@
     </fragment>
     <fragment
         android:id="@+id/sab7aFragment"
-        android:name="com.mostafa.quran.ui.fragment.Sab7aFragment"
+        android:name="com.mostafa.quran.ui.cycles.home.sab7a.fragment.Sab7aFragment"
         android:label="fragment_sab7a"
         tools:layout="@layout/fragment_sab7a" />
     <fragment
         android:id="@+id/compassFragment"
-        android:name="com.mostafa.quran.ui.fragment.CompassFragment"
+        android:name="com.mostafa.quran.ui.cycles.home.compass.fragment.CompassFragment"
         android:label="CompassFragment" />
+    <fragment
+        android:id="@+id/alsalahContentFragment"
+        android:name="com.mostafa.quran.ui.cycles.home.alsalah.fragment.list.AlsalahContentFragment"
+        android:label="AlsalahContentFragment"
+        tools:layout="@layout/fragment_alsalah_content"
+        >
+        <argument
+            android:name="model"
+            app:argType="com.mostafa.quran.domain.model.alsalah.Chapter" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/pdfViewerFragment"
+        android:name="com.mostafa.quran.ui.cycles.home.pdf.pdfviewer.PdfViewerFragment"
+        android:label="PdfViewerFragment"
+        tools:layout="@layout/fragment_pdf_viewer"
+        >
+
+        <argument
+            android:name="file_path"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/pdfListFragment"
+        android:name="com.mostafa.quran.ui.cycles.home.pdf.PdfListFragment"
+        android:label="PdfListFragment"
+        tools:layout="@layout/fragment_pdf_list"
+        >
+
+        <action
+            android:id="@+id/action_pdfListFragment_to_pdfViewerFragment"
+            app:destination="@id/pdfViewerFragment" />
+    </fragment>
 
 
 </navigation>

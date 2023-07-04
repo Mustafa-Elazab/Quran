@@ -2,27 +2,24 @@
     <!-- Base application theme. -->
     <style name="Theme.MyApplication" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorAccent</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorSecondary">@color/colorPrimaryDark</item>
+        <item name="colorSecondaryVariant">@color/colorAccent</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">@color/purple</item>
+
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:statusBarColor">#007063</item>
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="Theme.MySplash" parent="Theme.SplashScreen">
-        <item name="windowSplashScreenBackground">@color/white</item>
-        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_logo</item>
-        <item name="postSplashScreenTheme">@style/Theme.MyApplication</item>
-    </style>
 
     <style name="TitleText">
         <item name="android:textSize">@dimen/_20ssp</item>
-        <item name="android:fontFamily">@font/islamic_arabic</item>
+        <item name="android:fontFamily">@font/home</item>
 
         <item name="android:gravity">center</item>
         <item name="android:textStyle">bold</item>
@@ -31,7 +28,7 @@
 
     <style name="ContentText">
         <item name="android:textSize">@dimen/_18ssp</item>
-        <item name="android:fontFamily">@font/sst_arabic_light</item>
+        <item name="android:fontFamily">@font/quran_font</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:gravity">center</item>
         <item name="android:padding">@dimen/_8sdp</item>
@@ -42,14 +39,14 @@
 
     <style name="titleText">
         <item name="android:textSize">@dimen/_18ssp</item>
-        <item name="android:fontFamily">@font/extra_bold</item>
+        <item name="android:fontFamily">@font/home</item>
         <item name="android:textStyle">bold</item>
 
     </style>
 
     <style name="contentText">
         <item name="android:textSize">@dimen/_14ssp</item>
-        <item name="android:fontFamily">@font/ropot_regular</item>
+        <item name="android:fontFamily">@font/home</item>
         <item name="android:gravity">center</item>
         <item name="android:padding">@dimen/_8sdp</item>
         <item name="android:textStyle">bold</item>

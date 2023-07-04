@@ -25,4 +25,18 @@
     <string name="gmail">Gmail</string>
     <string name="whatsapp">whatsApp</string>
     <string name="facebook">facebook</string>
+
+
+    <string name="cancel_dialog">Cancel</string>
+    <string name="text_too_many_request_error">For some weird reasons, your request cannot be made :(</string>
+    <string name="enableGPS">"Enable Gps "</string>
+    <string name="enable">Enable</string>
+    <string name="google_maps_key">AIzaSyDeHImLJKSBAAjXcleYtxpT_RBBOUXRtLI</string>
+    <string name="go_to_settings">Go To Settings</string>
+    <string name="location_permission_attention">This app needs the Location permission, please accept to use location functionality</string>
+    <string name="location_title">Location Permission Needed</string>
+    <string name="search">Search\n</string>
+
+
+
 </resources>

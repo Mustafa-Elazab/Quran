@@ -25,14 +25,14 @@
             android:id="@+id/qiblaCompassView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_below="@id/app_bar"
+            android:layout_centerInParent="true"
             android:layout_gravity="center"
             app:currentLatitude="59.428299"
             app:currentLongitude="10.667990"
-            app:dialDrawable="@drawable/ic_dial"
+            app:dialDrawable="@drawable/ic_compass_direction"
             app:hideStatusText="false"
-            android:layout_below="@id/app_bar"
-            android:layout_centerInParent="true"
-            app:needleDrawable="@drawable/ic_needle" />
+            app:needleDrawable="@drawable/ic_qibla_needle" />
 
 
     </RelativeLayout>

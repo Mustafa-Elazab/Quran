@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/custom_bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_200sdp"
+        android:layoutDirection="rtl"
+        android:padding="@dimen/_8sdp">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/font_settings_tv"
+            style="@style/TextAppearance.MdcTypographyStyles.Headline5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="اعدادات الخط"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/fonts_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_8sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/font_settings_tv" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/fonts_spinner_tv"
+            style="@style/TextAppearance.MdcTypographyStyles.Headline5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/baseline_translate_24"
+            android:drawablePadding="@dimen/_4sdp"
+            android:text="الخط"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/font_settings_tv" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/fonts_size_tv"
+            style="@style/TextAppearance.MdcTypographyStyles.Headline5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/baseline_translate_24"
+            android:drawablePadding="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:text="حجم الخط"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fonts_spinner_tv" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_16sdp"
+            android:layout_marginHorizontal="@dimen/_16sdp"
+            app:layout_constraintTop_toBottomOf="@id/fonts_size_tv" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

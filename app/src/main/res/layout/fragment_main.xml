@@ -11,11 +11,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#f6f4ff"
-        android:layoutDirection="rtl"
+  android:layoutDirection="rtl"
         android:nestedScrollingEnabled="true"
         android:scrollbarStyle="outsideOverlay"
         android:scrollbars="vertical"
-        tools:context=".ui.fragment.MainFragment">
+        tools:context=".ui.cycles.home.main.fragment.MainFragment">
 
 
         <androidx.core.widget.NestedScrollView
@@ -37,480 +37,106 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <ImageView
+                <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/iv_first_top_view"
                     android:layout_width="0dp"
-                    android:layout_height="@dimen/_300sdp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/mock_top"
+                    android:layout_height="0dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/app_icon"
                     android:visibility="visible"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintBottom_toBottomOf="@id/tv_next_pray_time"
+                    app:layout_constraintEnd_toEndOf="@id/tv_location"
+                    app:layout_constraintStart_toStartOf="@id/tv_location"
+                    app:layout_constraintTop_toTopOf="@id/tv_location"
+                    app:layout_constraintWidth_percent=".3" />
 
 
-                <TextView
-                    android:id="@+id/tv_categories"
-                    android:layout_width="wrap_content"
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_date"
+                    style="@style/TextAppearance.MdcTypographyStyles.Body1"
+                    android:layout_width="0dp"
+                    android:textAlignment="viewStart"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_18sdp"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:text="| الأقسام"
-                    android:textColor="#6A57CF"
-                    android:textSize="28sp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    app:layout_constraintEnd_toStartOf="@id/iv_first_top_view"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/iv_first_top_view" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="28 / 6 / 2023" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_next_pray"
+                    style="@style/TextAppearance.MdcTypographyStyles.Headline6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="viewStart"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    app:layout_constraintEnd_toEndOf="@id/tv_date"
+                    app:layout_constraintStart_toStartOf="@id/tv_date"
+                    app:layout_constraintTop_toBottomOf="@id/tv_date"
+                    tools:text="الصلاة القادمة : Dhuhr" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_next_pray_time"
+                    style="@style/TextAppearance.MdcTypographyStyles.Headline6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:textAlignment="viewStart"
+                    app:layout_constraintEnd_toEndOf="@id/tv_date"
+                    app:layout_constraintStart_toStartOf="@id/tv_date"
+                    app:layout_constraintTop_toBottomOf="@id/tv_next_pray"
+                    tools:text="00:12:00 S" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_location"
+                    style="@style/TextAppearance.MdcTypographyStyles.Headline6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tv_date"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="masnoura" />
+
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_category"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="@dimen/_16sdp"
-                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
                     android:clipToPadding="false"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_categories"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:layout_constraintEnd_toEndOf="@id/tv_location"
+                    app:layout_constraintStart_toStartOf="@id/tv_date"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_next_pray_time"
+                    app:spanCount="4"
                     tools:listitem="@layout/main_home_layout" />
-
-
-
-
 
 
                 <TextView
                     android:id="@+id/tv_pray_time"
+                    style="@style/TextAppearance.MdcTypographyStyles.Headline5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_18sdp"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:text="| مواقيت الصلاة"
-                    android:textColor="#6A57CF"
-                    android:textSize="28sp"
-                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:text="مواقيت الصلاة"
+                    app:layout_constraintStart_toStartOf="@id/tv_date"
                     app:layout_constraintTop_toBottomOf="@id/rv_category" />
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/constraint"
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvSchedule"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layoutDirection="rtl"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_pray_time">
-
-
-                    <LinearLayout
-                        android:id="@+id/line_stepper"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
-
-
-                        <View
-                            android:id="@+id/view_pray_one"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="36dp"
-                            android:background="@drawable/circular_target_variant_svgrepo_com" />
-
-                        <View
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_gravity="center_horizontal"
-                            android:background="@drawable/ic_line"
-                            android:backgroundTint="#CBC1FF" />
-
-                        <View
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:layout_gravity="center_horizontal"
-                            android:background="@drawable/circular_target_variant_svgrepo_com" />
-
-                        <View
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_gravity="center_horizontal"
-                            android:background="@drawable/ic_line"
-                            android:backgroundTint="#CBC1FF" />
-
-
-                        <View
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:layout_gravity="center_horizontal"
-                            android:background="@drawable/circular_target_variant_svgrepo_com" />
-
-
-                        <View
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_gravity="center_horizontal"
-                            android:background="@drawable/ic_line"
-                            android:backgroundTint="#CBC1FF" />
-
-                        <View
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:layout_gravity="center_horizontal"
-                            android:background="@drawable/circular_target_variant_svgrepo_com" />
-
-                        <View
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_gravity="center_horizontal"
-                            android:background="@drawable/ic_line"
-                            android:backgroundTint="#CBC1FF" />
-
-                        <View
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginBottom="36dp"
-                            android:background="@drawable/circular_target_variant_svgrepo_com" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/line_stepper_cards"
-                        android:layout_width="0dp"
-                        android:layout_height="0dp"
-                        android:orientation="vertical"
-                        android:paddingTop="5dp"
-                        app:layout_constraintBottom_toBottomOf="@id/line_stepper"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@id/line_stepper"
-                        app:layout_constraintTop_toTopOf="@id/line_stepper">
-
-                        <com.google.android.material.card.MaterialCardView
-                            android:id="@+id/mCard_pray_one"
-                            android:layout_width="match_parent"
-                            android:layout_height="80dp"
-                            android:layout_marginStart="26dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginEnd="26dp"
-                            android:layout_marginBottom="10dp"
-                            android:outlineSpotShadowColor="#684CFF"
-                            app:cardBackgroundColor="#FEFEFE"
-                            app:cardCornerRadius="20dp"
-                            app:cardElevation="3dp"
-                            app:strokeColor="@null">
-
-                            <androidx.constraintlayout.widget.ConstraintLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-
-                                >
-
-                                <ImageView
-                                    android:id="@+id/miv_pray_view_one"
-                                    android:layout_width="42dp"
-                                    android:layout_height="42dp"
-                                    android:layout_marginStart="24dp"
-                                    android:background="@drawable/rounded_back_image"
-                                    android:padding="5sp"
-                                    android:src="@drawable/moon_svgrepo_com"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent"
-                                    app:tint="#684CFF" />
-
-                                <TextView
-                                    android:id="@+id/mtv_pray_view_one"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="12sp"
-                                    android:layout_marginBottom="-5sp"
-
-                                    android:includeFontPadding="false"
-                                    android:text="الفجر"
-                                    android:textSize="16sp"
-
-                                    app:layout_constraintStart_toEndOf="@id/miv_pray_view_one"
-                                    app:layout_constraintTop_toTopOf="@id/miv_pray_view_one" />
-
-                                <TextView
-                                    android:id="@+id/m2tv_pray_view_one"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="12sp"
-
-                                    android:includeFontPadding="false"
-                                    android:text="02:00 AM - 04:36 AM"
-                                    android:textColor="#C8C8CA"
-                                    android:textSize="12sp"
-                                    app:layout_constraintBottom_toBottomOf="@id/miv_pray_view_one"
-                                    app:layout_constraintStart_toEndOf="@id/miv_pray_view_one"
-                                    app:layout_constraintTop_toBottomOf="@id/mtv_pray_view_one" />
-
-                            </androidx.constraintlayout.widget.ConstraintLayout>
-                        </com.google.android.material.card.MaterialCardView>
-
-                        <com.google.android.material.card.MaterialCardView
-                            android:id="@+id/mCard_pray_two"
-                            android:layout_width="match_parent"
-                            android:layout_height="80dp"
-                            android:layout_marginStart="26dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginEnd="26dp"
-                            android:layout_marginBottom="10dp"
-                            android:outlineSpotShadowColor="#684CFF"
-                            app:cardBackgroundColor="#FEFEFE"
-                            app:cardCornerRadius="20dp"
-                            app:cardElevation="3dp"
-                            app:strokeColor="@null">
-
-                            <androidx.constraintlayout.widget.ConstraintLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-
-                                >
-
-                                <ImageView
-                                    android:id="@+id/miv_pray_view_two"
-                                    android:layout_width="42dp"
-                                    android:layout_height="42dp"
-                                    android:layout_marginStart="24dp"
-                                    android:background="@drawable/rounded_back_image"
-                                    android:padding="5sp"
-                                    android:src="@drawable/sun_svgrepo_com"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent"
-                                    app:tint="#ffd500" />
-
-                                <TextView
-                                    android:id="@+id/mtv_pray_view_two"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="12sp"
-                                    android:layout_marginBottom="-5sp"
-
-                                    android:includeFontPadding="false"
-                                    android:text="الضهر"
-                                    android:textSize="16sp"
-
-                                    app:layout_constraintStart_toEndOf="@id/miv_pray_view_two"
-                                    app:layout_constraintTop_toTopOf="@id/miv_pray_view_two" />
-
-                                <TextView
-                                    android:id="@+id/m2tv_pray_view_two"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="12sp"
-
-                                    android:includeFontPadding="false"
-                                    android:text="13:07 PM - 04:29 PM"
-                                    android:textColor="#C8C8CA"
-                                    android:textSize="12sp"
-                                    app:layout_constraintBottom_toBottomOf="@id/miv_pray_view_two"
-                                    app:layout_constraintStart_toEndOf="@id/miv_pray_view_two"
-                                    app:layout_constraintTop_toBottomOf="@id/mtv_pray_view_two" />
-
-                            </androidx.constraintlayout.widget.ConstraintLayout>
-                        </com.google.android.material.card.MaterialCardView>
-
-                        <com.google.android.material.card.MaterialCardView
-                            android:id="@+id/mCard_pray_three"
-                            android:layout_width="match_parent"
-                            android:layout_height="80dp"
-                            android:layout_marginStart="26dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginEnd="26dp"
-                            android:layout_marginBottom="10dp"
-                            android:outlineSpotShadowColor="#684CFF"
-                            app:cardBackgroundColor="#FEFEFE"
-                            app:cardCornerRadius="20dp"
-                            app:cardElevation="3dp"
-                            app:strokeColor="@null">
-
-                            <androidx.constraintlayout.widget.ConstraintLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-
-                                >
-
-                                <ImageView
-                                    android:id="@+id/miv_pray_view_three"
-                                    android:layout_width="42dp"
-                                    android:layout_height="42dp"
-                                    android:layout_marginStart="24dp"
-                                    android:background="@drawable/rounded_back_image"
-                                    android:padding="5sp"
-                                    android:src="@drawable/cloud_svgrepo_com"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent" />
-
-                                <TextView
-                                    android:id="@+id/mtv_pray_view_three"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="12sp"
-                                    android:layout_marginBottom="-5sp"
-
-                                    android:includeFontPadding="false"
-                                    android:text="العصر"
-                                    android:textSize="16sp"
-
-                                    app:layout_constraintStart_toEndOf="@id/miv_pray_view_three"
-                                    app:layout_constraintTop_toTopOf="@id/miv_pray_view_three" />
-
-                                <TextView
-                                    android:id="@+id/m2tv_pray_view_three"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="12sp"
-
-                                    android:includeFontPadding="false"
-                                    android:text="04:30 PM - 05:12 PM"
-                                    android:textColor="#C8C8CA"
-                                    android:textSize="12sp"
-                                    app:layout_constraintBottom_toBottomOf="@id/miv_pray_view_three"
-                                    app:layout_constraintStart_toEndOf="@id/miv_pray_view_three"
-                                    app:layout_constraintTop_toBottomOf="@id/mtv_pray_view_three" />
-
-                            </androidx.constraintlayout.widget.ConstraintLayout>
-                        </com.google.android.material.card.MaterialCardView>
-
-                        <com.google.android.material.card.MaterialCardView
-                            android:id="@+id/mCard_pray_four"
-                            android:layout_width="match_parent"
-                            android:layout_height="80dp"
-                            android:layout_marginStart="26dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginEnd="26dp"
-                            android:layout_marginBottom="10dp"
-                            android:outlineSpotShadowColor="#684CFF"
-                            app:cardBackgroundColor="#FEFEFE"
-                            app:cardCornerRadius="20dp"
-                            app:cardElevation="3dp"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@id/line_stepper"
-                            app:layout_constraintTop_toTopOf="@id/line_stepper"
-
-                            app:strokeColor="@null">
-
-                            <androidx.constraintlayout.widget.ConstraintLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-
-                                >
-
-                                <ImageView
-                                    android:id="@+id/miv_pray_view_four"
-                                    android:layout_width="42dp"
-                                    android:layout_height="42dp"
-                                    android:layout_marginStart="24dp"
-                                    android:background="@drawable/rounded_back_image"
-                                    android:padding="5sp"
-                                    android:src="@drawable/sun_behind_large_cloud_svgrepo_com"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent" />
-
-                                <TextView
-                                    android:id="@+id/mtv_pray_view_four"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="12sp"
-                                    android:layout_marginBottom="-5sp"
-
-                                    android:includeFontPadding="false"
-                                    android:text="المغرب"
-                                    android:textSize="16sp"
-
-                                    app:layout_constraintStart_toEndOf="@id/miv_pray_view_four"
-                                    app:layout_constraintTop_toTopOf="@id/miv_pray_view_four" />
-
-                                <TextView
-                                    android:id="@+id/m2tv_pray_view_four"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="12sp"
-
-                                    android:includeFontPadding="false"
-                                    android:text="06:16 PM - 07:28 PM"
-                                    android:textColor="#C8C8CA"
-                                    android:textSize="12sp"
-                                    app:layout_constraintBottom_toBottomOf="@id/miv_pray_view_four"
-                                    app:layout_constraintStart_toEndOf="@id/miv_pray_view_four"
-                                    app:layout_constraintTop_toBottomOf="@id/mtv_pray_view_four" />
-                            </androidx.constraintlayout.widget.ConstraintLayout>
-                        </com.google.android.material.card.MaterialCardView>
-
-                        <com.google.android.material.card.MaterialCardView
-                            android:id="@+id/mCard_pray_five"
-                            android:layout_width="match_parent"
-                            android:layout_height="80dp"
-                            android:layout_marginStart="26dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginEnd="26dp"
-                            android:layout_marginBottom="10dp"
-                            android:outlineSpotShadowColor="#684CFF"
-                            app:cardBackgroundColor="#FEFEFE"
-                            app:cardCornerRadius="20dp"
-                            app:cardElevation="3dp"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@id/line_stepper"
-                            app:layout_constraintTop_toTopOf="@id/line_stepper"
-
-                            app:strokeColor="@null">
-
-                            <androidx.constraintlayout.widget.ConstraintLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-
-                                >
-
-                                <ImageView
-                                    android:id="@+id/miv_pray_view_five"
-                                    android:layout_width="42dp"
-                                    android:layout_height="42dp"
-                                    android:layout_marginStart="24dp"
-                                    android:background="@drawable/rounded_back_image"
-                                    android:padding="5sp"
-                                    android:src="@drawable/weather_night_partly_cloudy"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent" />
-
-                                <TextView
-                                    android:id="@+id/mtv_pray_view_five"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="12sp"
-                                    android:layout_marginBottom="-5sp"
-
-                                    android:includeFontPadding="false"
-                                    android:text="العشاء"
-                                    android:textSize="16sp"
-
-                                    app:layout_constraintStart_toEndOf="@id/miv_pray_view_five"
-                                    app:layout_constraintTop_toTopOf="@id/miv_pray_view_five" />
-
-                                <TextView
-                                    android:id="@+id/m2tv_pray_view_five"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="12sp"
-                                    android:includeFontPadding="false"
-                                    android:text="06:16 PM - 07:28 PM"
-                                    android:textColor="#C8C8CA"
-                                    android:textSize="12sp"
-                                    app:layout_constraintBottom_toBottomOf="@id/miv_pray_view_five"
-                                    app:layout_constraintStart_toEndOf="@id/miv_pray_view_five"
-                                    app:layout_constraintTop_toBottomOf="@id/mtv_pray_view_five" />
-                            </androidx.constraintlayout.widget.ConstraintLayout>
-                        </com.google.android.material.card.MaterialCardView>
-
-                    </LinearLayout>
-
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                    android:layout_height="0dp"
+                    android:padding="16dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="@id/tv_location"
+                    app:layout_constraintStart_toStartOf="@id/tv_date"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_pray_time"
+                    tools:itemCount="5"
+                    tools:listitem="@layout/item_schedule" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.core.widget.NestedScrollView>

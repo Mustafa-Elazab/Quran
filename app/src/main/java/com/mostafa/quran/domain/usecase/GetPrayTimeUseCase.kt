@@ -7,9 +7,14 @@ import javax.inject.Inject
 
 class GetPrayTimeUseCase @Inject constructor(private val repository: HomeRepository) {
 
-    suspend fun getPrayTime() =
-        repository.getPrayTime()
+    suspend operator fun invoke(latitude: Double, longitude: Double, month: Int, year: Int) =
 
+        repository.getPrayTime(
+            latitude = latitude,
+            longitude = longitude,
+            month = month,
+            year = year
+        )
 
 
 

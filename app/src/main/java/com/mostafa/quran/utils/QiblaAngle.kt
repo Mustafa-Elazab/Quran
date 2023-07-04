@@ -12,7 +12,7 @@ data class LocationCoordinates(val latitude: Double, val longitude: Double)
 class QiblaAngle(location: LocationCoordinates) {
 
     companion object {
-        val MAKKAH = LocationCoordinates(21.4225241, 39.8261818)
+        val MAKKAH = LocationCoordinates(21.42252, 39.82621)
     }
 
     val angleDirection = calculateQiblaDirection(location)

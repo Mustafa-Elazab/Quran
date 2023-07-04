@@ -18,7 +18,6 @@
             android:id="@+id/tv_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/blue"
             android:padding="10dp"
             android:textColor="@color/white"
             android:textSize="17sp"
@@ -54,7 +53,7 @@
         android:textColor="@color/white"
         android:textSize="14sp"
         android:text="اغلاق"
-        android:fontFamily="@font/sst_arabic_bold"
+        android:fontFamily="@font/home"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/layoutDialog"
         app:layout_constraintTop_toBottomOf="@id/layoutDialog" />

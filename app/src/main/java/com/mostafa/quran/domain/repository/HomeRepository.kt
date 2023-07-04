@@ -1,12 +1,22 @@
 package com.mostafa.quran.domain.repository
-import com.mostafa.quran.data.model.BaseResponse
+
+import com.mostafa.quran.data.remote.dto.AladhanResponseDTO
+import com.mostafa.quran.data.remote.dto.ErrorResponse
 import com.mostafa.quran.data.remote.response.NetworkResponse
 import kotlinx.coroutines.flow.Flow
-import com.mostafa.quran.domain.model.aladhan.AladhanResponse
 
 
 interface HomeRepository {
 
- suspend fun getPrayTime(): Flow<NetworkResponse<AladhanResponse, BaseResponse>>
+    suspend fun getPrayTime(
+        latitude: Double?,
+        longitude: Double?,
+        month: Int?,
+        year: Int?,
+    ): Flow<NetworkResponse<AladhanResponseDTO, ErrorResponse>>
+
+
+
+
 
 }

@@ -1,38 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layoutDirection="rtl"
+    android:layoutDirection="rtl">
 
-    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <com.google.android.material.appbar.AppBarLayout
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/page_title_tv"
+        style="@style/TextAppearance.MdcTypographyStyles.Headline4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        app:layout_constraintBottom_toBottomOf="@id/btnBack"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="0dp"
-        android:padding="0dp"
-        app:elevation="0dp"
-        android:elevation="0dp"
-        android:background="@color/purple"
+        app:layout_constraintStart_toEndOf="@id/btnBack"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        app:layout_constraintTop_toTopOf="@+id/btnBack"
+        tools:text="Quran" />
 
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/btnBack"
+        style="?attr/materialCardViewFilledStyle"
+        android:layout_width="?attr/actionBarSize"
+        android:layout_height="0dp"
+        android:layout_marginVertical="16dp"
+        android:layout_marginStart="12dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="8dp"
+        app:cardBackgroundColor="@color/grey"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+        <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="?attr/actionBarSize"
-            app:title="@string/app_name"
-            app:titleTextColor="@color/white"
-            app:navigationIcon="@drawable/ic_back"
-            android:padding="0dp"
-            android:layout_margin="0dp"
-            >
-        </androidx.appcompat.widget.Toolbar>
-    </com.google.android.material.appbar.AppBarLayout>
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/ic_arrow_back" />
+    </com.google.android.material.card.MaterialCardView>
 
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

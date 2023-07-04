@@ -9,6 +9,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
@@ -16,8 +17,10 @@ import javax.inject.Singleton
 object NetworkModule {
 
 
-    private const val BASE_URL =
-        "https://api.aladhan.com/v1/"
+    private const val BASE_URL_1 = "https://api.aladhan.com/v1/"
+    private const val BASE_URL_2 = "https://api.quran.com/api/v4/"
+
+
 
 
     @Singleton
@@ -30,9 +33,10 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideRetrofit(httpClient: OkHttpClient): Retrofit {
+    @Named("BaseUrl1")
+    fun provideRetrofit1(httpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(BASE_URL_1)
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(NetworkResponseAdapterFactory())
             .client(httpClient)
@@ -41,7 +45,29 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideApi(retrofit: Retrofit): ApiServices = retrofit.create(ApiServices::class.java)
+    @Named("BaseUrl2")
+    fun provideRetrofit2(httpClient: OkHttpClient): Retrofit {
+        return Retrofit.Builder()
+            .baseUrl(BASE_URL_2)
+            .addConverterFactory(GsonConverterFactory.create())
+            .addCallAdapterFactory(NetworkResponseAdapterFactory())
+            .client(httpClient)
+            .build()
+    }
+
+    @Singleton
+    @Provides
+    @Named("BaseUrl1")
+    fun provideApi1(@Named("BaseUrl1") retrofit: Retrofit): ApiServices {
+        return retrofit.create(ApiServices::class.java)
+    }
+
+    @Singleton
+    @Provides
+    @Named("BaseUrl2")
+    fun provideApi2(@Named("BaseUrl2") retrofit: Retrofit): ApiServices {
+        return retrofit.create(ApiServices::class.java)
+    }
 
 }
 

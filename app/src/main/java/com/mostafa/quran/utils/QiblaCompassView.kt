@@ -80,7 +80,7 @@ class QiblaCompassView : FrameLayout, QiblaSensorEventListener {
             )
             dialDrawable?.callback = this
         } else {
-            dialDrawable = resources.getDrawable(R.drawable.ic_dial)
+            dialDrawable = resources.getDrawable(R.drawable.ic_compass_direction)
         }
         if (typedArray.hasValue(R.styleable.QiblaCompassView_needleDrawable)) {
             needleDrawable = typedArray.getDrawable(
@@ -89,7 +89,7 @@ class QiblaCompassView : FrameLayout, QiblaSensorEventListener {
             needleDrawable?.callback = this
         }
         else {
-            needleDrawable = resources.getDrawable(R.drawable.ic_needle)
+            needleDrawable = resources.getDrawable(R.drawable.ic_compass_direction)
         }
 
         typedArray.recycle()

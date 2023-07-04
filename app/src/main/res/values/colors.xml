@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
+
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
@@ -13,16 +9,23 @@
     <color name="lightAccent">#E19D6D</color>
 
 
-    <color name="colorPrimary">#27496d</color>
-    <color name="colorPrimaryDark">#142850</color>
-    <color name="colorAccent">#142850</color>
+    <color name="colorPrimary">#007063</color>
+    <color name="colorPrimaryDark">#007063</color>
+    <color name="colorAccent">#38927C</color>
+
+    <color name="purple_200">#512E5F</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+
+    <color name="bgColor">#2E4053</color>
+    <color name="secondBg">#EBEDEF</color>
+
+    <color name="seek_bg">#c8c8c8</color>
+    <color name="grey_cc">#cccccc</color>
+    <color name="grey_aa">#aaaaaa</color>
 
 
-    <color name="purple">#4E3090</color>
-    <color name="yellow">#E9D680</color>
-    <color name="blue">#5592C8</color>
-    <color name="light_purple">#6749A3</color>
-    <color name="lighter_purple">#B580FF</color>
-    <color name="lighter">#D1B1FF</color>
 
 </resources>
