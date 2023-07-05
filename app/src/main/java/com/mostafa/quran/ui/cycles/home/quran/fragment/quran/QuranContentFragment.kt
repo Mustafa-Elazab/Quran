@@ -43,13 +43,13 @@ class QuranContentFragment :
                 findNavController().popBackStack()
             }
             tvSurahContent.text = model.quranContentModel.content
-//            settingsBtn.setOnClickListener {
-//                val bottomSheetFragment = MyBottomSheetFragment()
-//                bottomSheetFragment.show(
-//                    activity?.supportFragmentManager!!,
-//                    "MyBottomSheetFragment"
-//                )
-//            }
+            settingsBtn.setOnClickListener {
+                val bottomSheetFragment = MyBottomSheetFragment()
+                bottomSheetFragment.show(
+                    activity?.supportFragmentManager!!,
+                    "MyBottomSheetFragment"
+                )
+            }
         }
 
         viewModel.playAudio(model.quranContentModel.Number)

@@ -1,0 +1,12 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/grey" />
+            <corners android:radius="@dimen/_2sdp"/>
+
+        </shape>
+    </item>
+
+    <item android:drawable="@drawable/ic_arrow_back" />
+</layer-list>

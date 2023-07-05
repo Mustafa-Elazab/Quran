@@ -240,7 +240,7 @@ class HomeViewModel @Inject constructor(
         viewModelScope.launch {
             val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
 
-            val prayerNames = listOf("الفجْر", "الشروق", "الظُّهْر", "العَصر", "المَغرب", "العِشاء")
+            val prayerNames = listOf("الفجْر", "الظُّهْر", "العَصر", "المَغرب", "العِشاء")
             repository.setAlarmTimes(alarmTimes)
 
 

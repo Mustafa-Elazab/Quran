@@ -23,7 +23,12 @@ android {
     buildTypes {
         release {
             minifyEnabled true
-            debuggable false
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -95,11 +100,17 @@ dependencies {
     implementation "com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.3"
 
     def lottieVersion = "3.4.0"
-    implementation "com.airbnb.android:lottie:$lottieVersion"
+    implementation "com.airbnb.android:lottie:5.2.0"
+
+    //ExoPlayer
+    implementation 'com.google.android.exoplayer:exoplayer-core:2.18.7'
 
 
+    implementation 'com.github.afreakyelf:Pdf-Viewer:v1.0.7'
 
-    implementation 'com.github.barteksc:AndroidPdfViewerV1:1.6.0'
+   // implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
+
+ //   implementation 'com.github.barteksc:AndroidPdfViewerV1:1.6.0'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

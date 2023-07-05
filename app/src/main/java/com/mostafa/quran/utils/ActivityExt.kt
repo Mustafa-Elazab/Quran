@@ -22,53 +22,5 @@ fun Activity.makeStatusBarTransparent() {
 }
 
 
-fun View.setMarginTop(marginTop: Int) {
-    val menuLayoutParams = this.layoutParams as ViewGroup.MarginLayoutParams
-    menuLayoutParams.setMargins(0, marginTop, 0, 0)
-    this.layoutParams = menuLayoutParams
-}
 
-
-fun Activity.hideSystemUI() {
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-        window.setDecorFitsSystemWindows(false)
-    } else {
-        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
-    }
-}
-
-fun isConnectedToInternet(context: Context): Boolean{
-    var isConnected = false
-    val cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager?
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
-        cm?.run {
-            cm.getNetworkCapabilities(cm.activeNetwork)?.run {
-                if (hasTransport(NetworkCapabilities.TRANSPORT_WIFI)){
-                    isConnected = true
-                } else if (hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR)){
-                    isConnected = true
-                } else if (hasTransport(NetworkCapabilities.TRANSPORT_VPN)){
-                    isConnected = true
-                }
-            }
-        }
-    }else{
-        cm?.run {
-            cm.activeNetworkInfo?.run {
-                when(type){
-                    ConnectivityManager.TYPE_WIFI -> {
-                        isConnected = true
-                    }
-                    ConnectivityManager.TYPE_MOBILE -> {
-                        isConnected = true
-                    }
-                    ConnectivityManager.TYPE_VPN -> {
-                        isConnected = true
-                    }
-                }
-            }
-        }
-    }
-    return isConnected
-}
 

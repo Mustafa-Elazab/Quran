@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Theme.MyApplication" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
@@ -16,6 +16,10 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="Theme.PdfView.SelectedTheme" parent="@style/Theme.PdfView.Light">
+        <item name="pdfView_backIcon">@drawable/back_arrow_pdf</item>
+        <item name="pdfView_actionBarTint">@color/white</item>
+    </style>
 
     <style name="TitleText">
         <item name="android:textSize">@dimen/_20ssp</item>

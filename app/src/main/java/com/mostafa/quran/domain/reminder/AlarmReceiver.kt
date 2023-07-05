@@ -66,8 +66,8 @@ class AlarmReceiver : BroadcastReceiver() {
 
         val notificationBuilder = NotificationCompat.Builder(context, channelId)
             .setSmallIcon(R.drawable.app_icon)
-            .setContentTitle("${prayName}صلاة ")
-            .setContentText("حان الان موعد صلاة $prayName")
+            .setContentTitle("${prayName} صلاة  ")
+            .setContentText(" حان الان موعد صلاة $prayName")
             .setPriority(NotificationCompat.PRIORITY_HIGH)
             .setAutoCancel(true)
             .setSound(soundUri)

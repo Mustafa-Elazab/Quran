@@ -1,23 +1,22 @@
 package com.mostafa.quran.ui.cycles.home.pdf.adapter
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.Navigation
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.mostafa.quran.R
 import com.mostafa.quran.databinding.PdfItemLayoutBinding
 import com.mostafa.quran.domain.model.PDFModel
-import com.mostafa.quran.ui.cycles.home.pdf.PdfListFragmentDirections
 
-class PdfListAdapter :
+class PdfListAdapter(private var listener: OnItemClickListener) :
     ListAdapter<PDFModel, PdfListAdapter.ItemViewHolder>(PDFModelDiffCallback()) {
 
 
+    interface OnItemClickListener {
+        fun openPdf(pdfModel: PDFModel)
+    }
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
@@ -38,11 +37,7 @@ class PdfListAdapter :
 
         holder.itemView.setOnClickListener {
 
-            val action =
-                PdfListFragmentDirections.actionPdfListFragmentToPdfViewerFragment(getItem(position).filePath)
-           holder.itemView.findNavController().navigate(action)
-
-
+            listener.openPdf(getItem(position))
         }
 
 

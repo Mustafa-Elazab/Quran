@@ -1,5 +1,8 @@
 package com.mostafa.quran.domain.model
 
+import androidx.annotation.Keep
+
+
 data class PrayerTime(
     val id: Int,
     val name: String,

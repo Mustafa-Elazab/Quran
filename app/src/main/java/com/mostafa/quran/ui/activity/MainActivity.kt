@@ -163,7 +163,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun buildAlertMessageNoGps() {
+    private fun buildAlertMessageNoGps() {
         val builder = AlertDialog.Builder(this)
         builder.setMessage(getString(R.string.enableGPS))
             .setIcon(R.drawable.ic_location)

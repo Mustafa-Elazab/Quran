@@ -8,12 +8,14 @@ import com.mostafa.quran.base.BaseFragment
 import com.mostafa.quran.databinding.FragmentPdfListBinding
 import com.mostafa.quran.domain.model.PDFModel
 import com.mostafa.quran.ui.cycles.home.pdf.adapter.PdfListAdapter
+import com.rajat.pdfviewer.PdfViewerActivity
 
 
-class PdfListFragment : BaseFragment<FragmentPdfListBinding>(R.layout.fragment_pdf_list) {
+class PdfListFragment : BaseFragment<FragmentPdfListBinding>(R.layout.fragment_pdf_list),
+    PdfListAdapter.OnItemClickListener {
 
 
-    private val pdfAdapter = PdfListAdapter()
+    private val pdfAdapter = PdfListAdapter(this)
 
     override val defineBindingVariables: ((FragmentPdfListBinding) -> Unit)?
         get() = { binding ->
@@ -44,6 +46,19 @@ class PdfListFragment : BaseFragment<FragmentPdfListBinding>(R.layout.fragment_p
 
         binding.rvPdfList.adapter = pdfAdapter
         pdfAdapter.submitList(pdfModels)
+    }
+
+    override fun openPdf(pdfModel: PDFModel) {
+        startActivity(
+            PdfViewerActivity.Companion.launchPdfFromPath(
+                requireContext(),
+                pdfModel.filePath,
+                pdfModel.filePath,
+                "assets",
+                false,
+                true
+            )
+        )
     }
 
 }
