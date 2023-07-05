@@ -55,7 +55,6 @@ class Sab7aFragment : BaseFragment<FragmentSab7aBinding>(R.layout.fragment_sab7a
             }
 
 
-
         }
         collectFlows(listOf(::collectCounterState, ::collectVibrateState))
         val categories =
@@ -124,8 +123,14 @@ class Sab7aFragment : BaseFragment<FragmentSab7aBinding>(R.layout.fragment_sab7a
             ) {
 
 
-                binding.btnCount.setOnClickListener {
-                    viewModel.incrementCounter()
+                if (position != 0) {
+                    viewModel.resetCounter()
+                    binding.btnCount.setOnClickListener {
+
+                        viewModel.incrementCounter()
+
+                    }
+
                 }
             }
 

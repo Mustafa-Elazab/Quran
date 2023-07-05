@@ -51,8 +51,8 @@ class Sab7aViewModel @Inject constructor(
         val currentValue = _counter.value
         _counter.value = currentValue + 1
 
-        val shouldVibrate = _vibratorStatus.asLiveData()
-        if (shouldVibrate.value == true) {
+        val shouldVibrate = _vibratorStatus.value
+        if (shouldVibrate) {
             vibrateDevice()
         }
     }
