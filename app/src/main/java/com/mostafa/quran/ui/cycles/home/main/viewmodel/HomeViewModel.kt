@@ -18,6 +18,7 @@ import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.mostafa.quran.data.remote.dto.AladhanResponseDTO
 import com.mostafa.quran.data.remote.dto.ErrorResponse
 import com.mostafa.quran.data.remote.response.NetworkResponse
@@ -46,7 +47,8 @@ class HomeViewModel @Inject constructor(
     private val useCase: GetPrayTimeUseCase,
     private val dataStore: DataStore<Preferences>?,
     private val alarmManager: AlarmManager,
-    private val repository: AlarmRepository
+    private val repository: AlarmRepository,
+    private val crashlytics: FirebaseCrashlytics
 ) : ViewModel() {
 
     private val _prayTime =
@@ -271,32 +273,15 @@ class HomeViewModel @Inject constructor(
         }
     }
 
+    fun logEvent() {
+        crashlytics.log("Event logged")
+    }
 
-//    @RequiresApi(Build.VERSION_CODES.O)
-//    fun setAlarm(context: Context, timesAlarm: Long,nextPray:String) {
-//        val currentTimeInMillis = System.currentTimeMillis()
-//        Log.d("TAG", "setAlarm: $currentTimeInMillis")
-//        val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
-//        val alarmTimeInMillis = currentTimeInMillis + timesAlarm
-//
-//        val alarmIntent = Intent(context, AlarmReceiver::class.java).apply {
-//            putExtra("PrayName",nextPray)
-//        }
-//        val pendingIntent = PendingIntent.getBroadcast(
-//            context,
-//            0,
-//            alarmIntent,
-//            PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
-//        )
-//
-//        alarmManager.setExactAndAllowWhileIdle(
-//            AlarmManager.RTC_WAKEUP,
-//            alarmTimeInMillis,
-//            pendingIntent
-//        )
-//
-//
-//    }
+    fun reportException(exception: Exception) {
+        crashlytics.recordException(exception)
+    }
+
+
 
     fun cancelAlarm(context: Context) {
         val alarmIntent = Intent(context, AlarmReceiver::class.java)

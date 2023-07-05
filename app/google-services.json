@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "382076758276",
+    "project_id": "deen-71170",
+    "storage_bucket": "deen-71170.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:382076758276:android:3bd104de182497c6aac851",
+        "android_client_info": {
+          "package_name": "com.mostafa.quran"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "382076758276-m1slomjbdb5bmghrq4pshlcrsdi9latj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbyedtlQTToJ8CwOkmX9fbnUobWgRUXF8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "382076758276-m1slomjbdb5bmghrq4pshlcrsdi9latj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

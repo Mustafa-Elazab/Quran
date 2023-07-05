@@ -5,6 +5,7 @@ import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.location.Location
@@ -15,6 +16,7 @@ import android.os.Bundle
 import android.provider.Settings
 import android.util.Log
 import android.view.Window
+import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
@@ -23,6 +25,8 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatImageView
+import androidx.appcompat.widget.AppCompatTextView
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationRequest
@@ -45,6 +49,11 @@ class MainActivity : AppCompatActivity() {
     private lateinit var permissionLauncher: ActivityResultLauncher<Array<String>>
     private val viewModel: HomeViewModel by viewModels()
 
+    @RequiresApi(Build.VERSION_CODES.TIRAMISU)
+    private val notificationPermission = arrayOf(
+        Manifest.permission.POST_NOTIFICATIONS
+    )
+
 
     private val locationManager: LocationManager by lazy {
         getSystemService(Context.LOCATION_SERVICE) as LocationManager
@@ -58,7 +67,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
+        requestNotificationPermission()
 
         permissionLauncher = registerForActivityResult(
             ActivityResultContracts.RequestMultiplePermissions()
@@ -83,7 +92,11 @@ class MainActivity : AppCompatActivity() {
 
             } else {
                 if (!shouldShowRequestPermissionRationale(Manifest.permission.ACCESS_FINE_LOCATION)) {
-                    provideExplainPermissionDialog().show()
+                    provideExplainPermissionDialog(
+                        title = "Location permission Needed",
+                        desc = "This app needs the Location permission, please accept to use location functionality"
+                    ).show()
+
                 }
             }
         }
@@ -91,6 +104,40 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+
+    private fun requestNotificationPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) ==
+                PackageManager.PERMISSION_GRANTED
+            ) {
+
+            } else if (shouldShowRequestPermissionRationale(Manifest.permission.POST_NOTIFICATIONS)) {
+                provideExplainPermissionDialog(
+                    title = "Notification permission Needed",
+                    desc = "This app needs the Notification permission, please accept to use notification functionality"
+                ).show()
+            } else {
+                requestPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
+            }
+        } else {
+            Toast.makeText(
+                this,
+                "",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+    }
+
+    private val requestPermissionLauncher = registerForActivityResult(
+        ActivityResultContracts.RequestPermission()
+    ) { isGranted: Boolean ->
+        if (isGranted) {
+            Log.d("Test", "Granted")
+            //Show notification
+        } else {
+            Log.d("Test", "Failed")
+        }
+    }
 
 
     @SuppressLint("MissingPermission")
@@ -177,13 +224,17 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    private fun provideExplainPermissionDialog(): Dialog {
+    private fun provideExplainPermissionDialog(title: String, desc: String): Dialog {
         val dialog = Dialog(this)
         with(dialog) {
             requestWindowFeature(Window.FEATURE_NO_TITLE)
             setCancelable(false)
             setContentView(R.layout.explain_permission_dialog_layout)
             window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            val textTitle = findViewById<AppCompatTextView>(R.id.textView1)
+            textTitle.setText(title)
+            val textDesc = findViewById<AppCompatTextView>(R.id.textView2)
+            textDesc.setText(desc)
             val closeDialog = findViewById<AppCompatImageView>(R.id.img_close)
             closeDialog.setOnClickListener { hide() }
             val openPermissionSettings = findViewById<AppCompatButton>(R.id.openPermissionSettings)

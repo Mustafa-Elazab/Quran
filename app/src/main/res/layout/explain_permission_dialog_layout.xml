@@ -27,7 +27,7 @@
 
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/textView"
+                android:id="@+id/textView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/_8sdp"
@@ -46,7 +46,7 @@
                 android:textSize="@dimen/_16sdp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView" />
+                app:layout_constraintTop_toBottomOf="@+id/textView1" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/imageView"
