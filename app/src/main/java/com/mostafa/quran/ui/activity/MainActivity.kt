@@ -49,10 +49,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var permissionLauncher: ActivityResultLauncher<Array<String>>
     private val viewModel: HomeViewModel by viewModels()
 
-    @RequiresApi(Build.VERSION_CODES.TIRAMISU)
-    private val notificationPermission = arrayOf(
-        Manifest.permission.POST_NOTIFICATIONS
-    )
+
 
 
     private val locationManager: LocationManager by lazy {
@@ -119,12 +116,6 @@ class MainActivity : AppCompatActivity() {
             } else {
                 requestPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
             }
-        } else {
-            Toast.makeText(
-                this,
-                "",
-                Toast.LENGTH_SHORT
-            ).show()
         }
     }
 
@@ -133,9 +124,8 @@ class MainActivity : AppCompatActivity() {
     ) { isGranted: Boolean ->
         if (isGranted) {
             Log.d("Test", "Granted")
-            //Show notification
         } else {
-            Log.d("Test", "Failed")
+
         }
     }
 

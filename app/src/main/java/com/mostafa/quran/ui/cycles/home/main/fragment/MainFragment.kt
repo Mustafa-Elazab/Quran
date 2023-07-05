@@ -157,8 +157,8 @@ class MainFragment : BaseFragment<FragmentMainBinding>(R.layout.fragment_main) {
     }
 
 
-    private suspend fun collectAddressState() {
-        binding.tvLocation.text = viewModel.city.toString() ?: ""
+    private  suspend fun collectAddressState() {
+        binding.tvLocation.text = viewModel.city.toString() ?: "العنوان"
     }
 
 
@@ -195,7 +195,7 @@ class MainFragment : BaseFragment<FragmentMainBinding>(R.layout.fragment_main) {
                             viewModel.timeStringToMillis(timing.maghrib.toString()),
                             viewModel.timeStringToMillis(timing.isha.toString()),
                         )
-                        Log.d(TAG, "collectTimingsState: $allPrayerTimesInMillis")
+
                         viewModel.getNextPrayer(allPrayerTimesInMillis, requireContext())
                         val prayerTimes = listOf(
                             PrayerTime(

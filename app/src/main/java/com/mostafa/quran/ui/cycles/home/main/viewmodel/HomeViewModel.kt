@@ -56,10 +56,6 @@ class HomeViewModel @Inject constructor(
     val prayTime get() = _prayTime.asStateFlow()
 
 
-    private var _locationAddress = MutableStateFlow<String?>("")
-    val locationAddress get() = _locationAddress.asStateFlow()
-
-
     private val dateFormat = SimpleDateFormat("MMM dd yyyy", Locale.getDefault())
     private val currentDate = Calendar.getInstance()
 
@@ -80,12 +76,10 @@ class HomeViewModel @Inject constructor(
     private val _nextPrayerStateFlow = MutableStateFlow<String>("")
     val nextPrayerStateFlow get() = _nextPrayerStateFlow.asStateFlow()
 
-    private val _locationStateFlow = MutableStateFlow<Location?>(null)
-    val locationStateFlow get() = _locationStateFlow.asStateFlow()
 
-    val location: MutableLiveData<Location> = MutableLiveData()
 
-    var city: String? = null
+
+    var city: String? = "العنوان"
     var latitude: Double? = 0.0
     var longitude: Double? = 0.0
 
@@ -221,9 +215,7 @@ class HomeViewModel @Inject constructor(
             Geocoder(context.applicationContext, Locale.getDefault()).apply {
                 getFromLocation(latitude, longitude, 1)?.first()
                     ?.let { address ->
-                        _locationAddress.emit(buildString {
-                            append(address.subAdminArea)
-                        })
+
                         dataStore!!.edit { preferences ->
                             preferences[LATITUDE] = latitude
                             preferences[LONGITUDE] = longitude
@@ -254,7 +246,7 @@ class HomeViewModel @Inject constructor(
                     context,
                     index,
                     alarmIntent,
-                    PendingIntent.FLAG_UPDATE_CURRENT
+                    PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
                 )
 
 

@@ -33,7 +33,7 @@ class FeatureAdapter() : ListAdapter<FeatureModel, FeatureAdapter.ViewHolder>(DI
         holder.view.item = getItem(position)
         var item = getItem(position)
 
-        holder.view.root.setOnClickListener { itemView ->
+        holder.view.constraint.setOnClickListener { itemView ->
 
             if (item.id == 1) {
 
