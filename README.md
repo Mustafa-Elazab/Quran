@@ -1,4 +1,4 @@
-<h1 align="center"> Deen App </h1>
+<h1 align="center">🕌 Deen App 🕌</h1>
 
 <p align="center">
   <a href="https://www.android.com/"><img alt="Platform" src="https://img.shields.io/badge/platform-android-brightgreen.svg"/></a>
